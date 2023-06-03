@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import generateNumber from '../src/even-game.js';
+import startEvenGame from "../games/even-game.js";
 
-const result = generateNumber();
+const result = startEvenGame();
 console.log(result);
