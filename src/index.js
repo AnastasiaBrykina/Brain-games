@@ -1,23 +1,23 @@
-import greeatingUser from "./greeting.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import greeatingUser from './greeting.js';
 
-const startGame = (rules, func1, func2) => {
-  console.log("Welcome to the Brain Games!");
+const gameStarter = (description, game) => {
+  console.log('Welcome to the Brain Games!');
   const userName = greeatingUser();
   console.log(`Hello, ${userName}!`);
-  console.log(rules);
+  console.log(description);
 
   const iterations = 3;
-  for (let i = 0; i < iterations; i += 1) {
-    const question = func1();
-    const correctAnswer = String(func2(question));
-    console.log(`Question: ${question}`);
-    const answer = readlineSync.question("Your answer: ");
 
-    if (answer === correctAnswer) {
-      console.log("Correct!");
+  for (let i = 0; i < iterations; i += 1) {
+    const [question, correctAnswer] = game();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
     } else {
-      return `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
 Let's try again, ${userName}!`;
     }
   }
@@ -25,4 +25,4 @@ Let's try again, ${userName}!`;
   return `Congratulations, ${userName}!`;
 };
 
-export default startGame;
+export default gameStarter;
