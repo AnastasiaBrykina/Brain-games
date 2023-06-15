@@ -3,18 +3,28 @@ import gameStarter from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const progressionGame = () => {
+const createProgression = (progressionLength, startNumber, stepProgression) => {
   const progression = [];
-
-  const progressionLength = getRandomNum(5, 10);
-  let startNumber = getRandomNum(1, 100);
-  const stepProgression = getRandomNum(1, 10);
+  let start = startNumber;
 
   for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(startNumber);
-    startNumber += stepProgression;
+    progression.push(start);
+    start += stepProgression;
   }
 
+  return progression;
+};
+
+const progressionGame = () => {
+  const progressionLength = getRandomNum(5, 10);
+  const startNumber = getRandomNum(1, 100);
+  const stepProgression = getRandomNum(1, 10);
+
+  const progression = createProgression(
+    progressionLength,
+    startNumber,
+    stepProgression,
+  );
   const closedIndex = getRandomNum(0, progressionLength - 1);
   const correctAnswer = progression[closedIndex];
   progression[closedIndex] = '..';

@@ -27,7 +27,7 @@ const calcGame = () => {
       result = firstOperand * secondOperand;
       break;
     default:
-      result = 'Unknown operation';
+      throw new Error('Unknown operator');
   }
 
   return [expression, String(result)];

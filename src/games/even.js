@@ -3,11 +3,13 @@ import gameStarter from '../index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const isEvenNum = (num) => num % 2 === 0;
+
 const evenGame = () => {
   const randomNumber = getRandomNum(1, 30);
-  const isEvenNum = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const evenNum = isEvenNum(randomNumber) ? 'yes' : 'no';
 
-  return [randomNumber, isEvenNum];
+  return [randomNumber, evenNum];
 };
 
 const startEvenGame = () => gameStarter(gameDescription, evenGame);
