@@ -6,7 +6,7 @@
 git clone https://github.com/AnastasiaBrykina/frontend-project-44.git
 ```
 ```
-cd /frontend-project-44.git
+cd /frontend-project-44
 ```
 ```
 make install
