@@ -3,7 +3,7 @@
 <a href="https://codeclimate.com/github/AnastasiaBrykina/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/0805188580e16921302d/maintainability" /></a>
 ## Install:
 ```
-git clone https://github.com/AnastasiaBrykina/frontend-project-44.git
+git clone git@github.com:AnastasiaBrykina/Brain-games.git
 ```
 ```
 cd /frontend-project-44
